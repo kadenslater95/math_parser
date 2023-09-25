@@ -16,9 +16,10 @@ link_libraries(
 )
 
 add_executable(
-  arithmetic_test
+  math_parser_test
   arithmetic_test.cpp
+  number_test.cpp
 )
 
 include(GoogleTest)
-gtest_discover_tests(arithmetic_test)
+gtest_discover_tests(math_parser_test)

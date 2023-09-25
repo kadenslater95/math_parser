@@ -23,6 +23,11 @@ Then you can go into `build/test` and run
 ctest
 ```
 to run the tests.
+Or, to run individual tests (such as NumberTest) you can use
+```
+math_parser_test --gtest_filter=NumberTest.*
+```
+.
 
 The math_parser lib is located in `build/src` as `libmath_parser.so`
 
