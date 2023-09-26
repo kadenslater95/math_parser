@@ -23,9 +23,9 @@ Then you can go into any test subfolder e.g. `debug/test/tokenizer_tests` and ru
 ctest
 ```
 to run the tests.
-Or, to run individual tests (such as NumberTest) you can use
+Or, to run individual tests (such as DigitsTest) you can use
 ```
-./tokenizer_test --gtest_filter=NumberTest.*
+./tokenizer_test --gtest_filter=DigitsTest.*
 ```
 depending on what the executable was called, but the naming convention is to match the singular version of the pluralized folder name.
 
