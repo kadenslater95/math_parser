@@ -15,11 +15,6 @@ link_libraries(
   math_parser
 )
 
-add_executable(
-  math_parser_test
-  arithmetic_test.cpp
-  number_test.cpp
-)
-
 include(GoogleTest)
-gtest_discover_tests(math_parser_test)
+
+add_subdirectory(tokenizer_tests)

@@ -4,7 +4,7 @@
 #include "math_parser.h"
 
 
-TEST(NumberTest, BasicInteger) {
+TEST(DigitsTest, Integer) {
   const char* expression = "25";
 
   int tokenCount;
@@ -17,7 +17,7 @@ TEST(NumberTest, BasicInteger) {
 }
 
 
-TEST(NumberTest, BasicDecimal) {
+TEST(DigitsTest, Decimal) {
   const char* expression = "3.14";
 
   int tokenCount;
