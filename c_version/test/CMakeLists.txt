@@ -17,8 +17,9 @@ link_libraries(
 
 add_executable(
   math_parser_test
-  arithmetic_test.cpp
-  number_test.cpp
+  digits_test.cpp
+  operator_test.cpp
+  name_test.cpp
 )
 
 include(GoogleTest)

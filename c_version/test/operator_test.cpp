@@ -4,7 +4,7 @@
 #include "math_parser.h"
 
 
-TEST(ArithmeticTest, BasicOperator) {
+TEST(OperatorTest, Multiplication) {
   const char* expression = "2 * 5";
 
   int tokenCount;
@@ -17,7 +17,7 @@ TEST(ArithmeticTest, BasicOperator) {
 }
 
 
-TEST(ArithmeticTest, BasicParen) {
+TEST(OperatorTest, Parentheses) {
   const char* expression = "(3 + 4) * 5";
 
   int tokenCount;

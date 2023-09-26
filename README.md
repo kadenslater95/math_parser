@@ -14,20 +14,20 @@ cd c_version
 to go into the root directory for the c_version of this parser. 
 Run cmake from this c_version directory
 ```
-cmake -S . -B build
-cmake --build build
+cmake -S . -B debug
+cmake --build debug
 ```
 
-Then you can go into `build/test` and run
+Then you can go into `debug/test` and run
 ```
 ctest
 ```
 to run the tests.
 Or, to run individual tests (such as NumberTest) you can use
 ```
-math_parser_test --gtest_filter=NumberTest.*
+./math_parser_test --gtest_filter=NumberTest.*
 ```
 .
 
-The math_parser lib is located in `build/src` as `libmath_parser.so`
+The math_parser lib is located in `debug/src` as `libmath_parser.so`
 

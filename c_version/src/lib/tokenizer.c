@@ -11,7 +11,12 @@
 
 
 bool isOperator(char c) {
-    return (c == '+' || c == '-' || c == '*' || c == '/');
+    return (c == '+' || c == '-' || c == '*' || c == '/' || c == '^' || c == '=');
+}
+
+
+bool isName(char c) {
+    return (isalpha(c) || c == '_');
 }
 
 
@@ -26,8 +31,23 @@ Token* tokenize(const char* raw, int* tokenCount) {
             continue;
         }
 
+
+        // Check if it's a name
+        if (isName(raw[raw_i])) {
+            int raw_j = raw_i;
+            while (raw_j < rawLen && isName(raw[raw_j])) {
+                raw_j++;
+            }
+
+            int tokenLen = raw_j - raw_i;
+            tokens[tokenIndex].type = TOKEN_NAME;
+            tokens[tokenIndex].value = (char*)malloc(tokenLen + 1);
+            strncpy(tokens[tokenIndex].value, raw + raw_i, tokenLen);
+            tokens[tokenIndex].value[tokenLen] = '\0';
+            raw_i = raw_j - 1; // Move the index to the end of the number
+        }
         // Check if it's a number
-        if (isdigit(raw[raw_i])) {
+        else if (isdigit(raw[raw_i])) {
             int raw_j = raw_i;
             while (raw_j < rawLen && isdigit(raw[raw_j])) {
                 raw_j++;
@@ -103,6 +123,9 @@ char* stringTokenType(TokenType type) {
 	if(type == TOKEN_RPAREN) {
 		return "TOKEN_RPAREN";
 	}
+    if(type == TOKEN_NAME) {
+        return "TOKEN_NAME";
+    }
 
 	return "TOKEN_UNKNOWN";
 }
