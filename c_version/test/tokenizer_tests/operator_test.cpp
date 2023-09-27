@@ -31,3 +31,23 @@ TEST(OperatorTest, Parentheses) {
 
   freeTokens(tokens, tokenCount);
 }
+
+
+TEST(OperatorTest, Interval) {
+  const char* expression = "0 <= x < 7";
+
+  int tokenCount;
+  Token* tokens = tokenize(expression, &tokenCount);
+
+  EXPECT_EQ(tokens[1].type, TOKEN_OPERATOR);
+  EXPECT_STREQ(tokens[1].value, "<");
+
+  EXPECT_EQ(tokens[2].type, TOKEN_OPERATOR);
+  EXPECT_STREQ(tokens[2].value, "=");
+
+  EXPECT_EQ(tokens[4].type, TOKEN_OPERATOR);
+  EXPECT_STREQ(tokens[4].value, "<");
+
+  freeTokens(tokens, tokenCount);
+}
+

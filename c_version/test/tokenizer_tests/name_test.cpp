@@ -50,3 +50,22 @@ TEST(NameTest, Tool) {
 
   freeTokens(tokens, tokenCount);
 }
+
+
+TEST(CommaTest, Comma) {
+  const char* expression = "Curve(t, t^2, t, -1 < t < 1)";
+
+  int tokenCount;
+  Token* tokens = tokenize(expression, &tokenCount);
+
+  EXPECT_EQ(tokens[3].type, TOKEN_COMMA);
+  EXPECT_STREQ(tokens[3].value, ",");
+
+  EXPECT_EQ(tokens[7].type, TOKEN_COMMA);
+  EXPECT_STREQ(tokens[7].value, ",");
+
+  EXPECT_EQ(tokens[9].type, TOKEN_COMMA);
+  EXPECT_STREQ(tokens[9].value, ",");
+
+  freeTokens(tokens, tokenCount);
+}

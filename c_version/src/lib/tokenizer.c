@@ -11,7 +11,16 @@
 
 
 bool isOperator(char c) {
-    return (c == '+' || c == '-' || c == '*' || c == '/' || c == '^' || c == '=');
+    return (
+        c == '+' ||
+        c == '-' ||
+        c == '*' ||
+        c == '/' ||
+        c == '^' ||
+        c == '=' ||
+        c == '>' ||
+        c == '<'
+    );
 }
 
 
@@ -46,6 +55,13 @@ Token* tokenize(const char* raw, int* tokenCount) {
             tokens[tokenIndex].value[tokenLen] = '\0';
             raw_i = raw_j - 1; // Move the index to the end of the number
         }
+        // Check if it's a comma
+		else if(raw[raw_i] == ',') {
+			tokens[tokenIndex].type = TOKEN_COMMA;
+            tokens[tokenIndex].value = (char*)malloc(2);
+            tokens[tokenIndex].value[0] = ',';
+            tokens[tokenIndex].value[1] = '\0';
+		}
         // Check if it's a number
         else if (isdigit(raw[raw_i])) {
             int raw_j = raw_i;

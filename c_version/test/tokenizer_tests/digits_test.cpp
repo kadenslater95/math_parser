@@ -17,7 +17,7 @@ TEST(DigitsTest, Integer) {
 }
 
 
-TEST(DigitsTest, Decimal) {
+TEST(DecimalTest, Decimal) {
   const char* expression = "3.14";
 
   int tokenCount;
