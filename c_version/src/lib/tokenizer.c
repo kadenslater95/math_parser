@@ -124,6 +124,12 @@ void freeTokens(Token* tokens, int tokenCount) {
 
 
 char* stringTokenType(TokenType type) {
+    if(type == TOKEN_NAME) {
+        return "TOKEN_NAME";
+    }
+    if(type == TOKEN_COMMA) {
+        return "TOKEN_COMMA";
+    }
 	if(type == TOKEN_DIGITS) {
 		return "TOKEN_DIGITS";
 	}
@@ -139,9 +145,6 @@ char* stringTokenType(TokenType type) {
 	if(type == TOKEN_RPAREN) {
 		return "TOKEN_RPAREN";
 	}
-    if(type == TOKEN_NAME) {
-        return "TOKEN_NAME";
-    }
 
 	return "TOKEN_UNKNOWN";
 }
