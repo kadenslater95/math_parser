@@ -8,6 +8,12 @@ extern "C" {
 
 
 typedef enum {
+    // Could be a Variable, Could be a Function, etc.
+    // Allows Alphabetic, _, and still deciding if others
+    TOKEN_NAME,
+
+    TOKEN_COMMA,
+
     TOKEN_DIGITS,
 	TOKEN_DECIMAL,
 
@@ -15,10 +21,6 @@ typedef enum {
 
     TOKEN_LPAREN,
     TOKEN_RPAREN,
-
-    // Could be a Variable, Could be a Function, etc.
-    // Allows Alphabetic, _, and still deciding if others
-    TOKEN_NAME,
 
     TOKEN_UNKNOWN
 } TokenType;
