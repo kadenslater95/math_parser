@@ -151,7 +151,9 @@ char* stringTokenType(TokenType type) {
 
 
 void printTokens(Token* tokens, int tokenCount) {
-	for(int i = 0; i < tokenCount; i++) {
-		printf("{\n\tIndex: %d,\n\tTokenType: %s,\n\tValue: %s\n}", i, stringTokenType(tokens[i].type), tokens[i].value);
+	for(int i = 0; i < tokenCount - 1; i++) {
+		printf("{\n\tIndex: %d,\n\tTokenType: %s,\n\tValue: \"%s\"\n},\n", i, stringTokenType(tokens[i].type), tokens[i].value);
 	}
+
+    printf("{\n\tIndex: %d,\n\tTokenType: %s,\n\tValue: \"%s\"\n}\n", tokenCount - 1, stringTokenType(tokens[tokenCount - 1].type), tokens[tokenCount - 1].value);
 }
