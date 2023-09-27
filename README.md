@@ -6,7 +6,11 @@ I will first make an Arithmetic Parser, then incrementally build up from there.
 There is a <b>c_version</b> for now with the whole project built in C, and later I will make a C++ version that uses Object Oriented features, the Standard Template Library, etc.
 
 
-### Usage
+#### Note
+Code highlighter might show red, depending on how you have things set up. Cmake can build this just fun, but the code highlighter thinks it can't find gtest include, etc. because cmake brings it in behind the scenes so it highlights red but still compiles.
+
+
+## Usage
 From the Project root directory,
 ```
 cd c_version
