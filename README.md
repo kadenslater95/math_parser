@@ -7,7 +7,7 @@ There is a <b>c_version</b> for now with the whole project built in C, and later
 
 
 #### Note
-Code highlighter might show red, depending on how you have things set up. Cmake can build this just fun, but the code highlighter thinks it can't find gtest include, etc. because cmake brings it in behind the scenes so it highlights red but still compiles.
+Code highlighter might show red, depending on how you have things set up. Cmake can build this just fine, but the code highlighter thinks it can't find gtest include, etc. because cmake brings it in behind the scenes so it highlights red but still compiles.
 
 
 ## Usage
